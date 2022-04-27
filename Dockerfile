@@ -12,7 +12,10 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip install flask-cors --upgrade
 
 # Download backend repo
-RUN git clone https://github.com/ivanek121/GCP_backend.git
+RUN cd GCP_backend
+RUN git pull
+RUN cd ..
+#RUN git clone https://github.com/ivanek121/GCP_backend.git
 
 # Copy the rest of the working directory contents into the container at /app
 COPY . .
